@@ -1144,7 +1144,7 @@ input:-webkit-autofill:active {
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main-content { margin-left: 0; padding: 20px; }
   .charts-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -1154,7 +1154,118 @@ input:-webkit-autofill:active {
   .task-card-right { flex-wrap: wrap; }
   .tab-bar { flex-wrap: wrap; width: 100%; }
   .tab-btn { flex: 1; justify-content: center; }
+} */
+
+/* ══════════════════════════════════
+   RESPONSIVE — ALL DEVICES
+══════════════════════════════════ */
+
+/* ── Tablet (769px – 1024px) ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .main-content           { padding: 24px 20px; }
+  .charts-grid            { grid-template-columns: 1fr; }
+  .stats-grid             { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid          { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+  .settings-grid          { grid-template-columns: 1fr 1fr; }
+  .page                   { max-width: 100%; }
 }
+
+/* ── Mobile (max 768px) ── */
+@media (max-width: 768px) {
+  /* layout */
+  .app-layout             { padding-top: 56px; }
+  .main-content           { margin-left: 0 !important; padding: 14px; }
+  .page                   { max-width: 100%; }
+
+  /* page header */
+  .page-header            { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+  .page-header h1         { font-size: 20px; }
+
+  /* stat cards */
+  .stats-grid             { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+  .stat-card              { padding: 14px; gap: 10px; }
+  .stat-value             { font-size: 22px; }
+  .stat-label             { font-size: 11px; }
+
+  /* charts */
+  .charts-grid            { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+  .chart-card             { padding: 14px; }
+
+  /* quick stats */
+  .quick-stats            { flex-direction: column; gap: 8px; }
+
+  /* projects */
+  .projects-grid          { grid-template-columns: 1fr; gap: 12px; }
+
+  /* tasks */
+  .filter-bar             { gap: 8px; }
+  .filter-bar select      { flex: 1; min-width: 0; font-size: 12px; padding: 7px 8px; }
+  .task-card              { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px; }
+  .task-card-left         { width: 100%; }
+  .task-card-right        { width: 100%; flex-wrap: wrap; gap: 8px; }
+
+  /* modal — slides from bottom */
+  .modal-overlay          { align-items: flex-end; padding: 0; }
+  .modal                  { border-radius: 16px 16px 0 0; max-width: 100%; width: 100%; max-height: 88vh; padding: 20px 16px; }
+  .form-row               { grid-template-columns: 1fr; gap: 10px; }
+  .modal-actions          { padding-bottom: 8px; }
+
+  /* calendar */
+  .calendar-card          { padding: 12px; }
+  .calendar-nav h2        { font-size: 15px; }
+  .calendar-cell          { padding: 5px; min-height: 56px; }
+  .cal-task               { font-size: 9px; padding: 1px 3px; }
+
+  /* AI scheduler */
+  .tab-bar                { width: 100%; flex-wrap: wrap; }
+  .tab-btn                { flex: 1; justify-content: center; font-size: 12px; padding: 8px 8px; }
+  .ai-action-card         { padding: 14px; }
+  .schedule-day           { padding: 12px; }
+
+  /* settings */
+  .settings-card          { padding: 16px; max-width: 100%; }
+  .settings-grid          { grid-template-columns: 1fr; gap: 14px; }
+  .settings-footer        { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* auth pages */
+  .auth-page              { padding: 16px; align-items: flex-start; padding-top: 40px; }
+  .auth-card              { padding: 28px 20px; }
+  .auth-card h2           { font-size: 20px; }
+  .forgot-card            { max-width: 100%; }
+
+  /* otp boxes */
+  .otp-inputs             { gap: 7px; }
+  .otp-box                { width: 42px; height: 50px; font-size: 20px; }
+
+  /* alert banner */
+  .productivity-badge     { font-size: 12px; padding: 6px 10px; }
+
+  /* step indicator */
+  .step-indicator         { gap: 0; overflow-x: auto; }
+  .step-line              { min-width: 20px; }
+}
+
+/* ── Small Mobile (max 480px) ── */
+@media (max-width: 480px) {
+  .main-content           { padding: 12px; }
+  .page-header h1         { font-size: 18px; }
+  .stats-grid             { gap: 8px; }
+  .stat-card              { padding: 12px; gap: 8px; }
+  .stat-value             { font-size: 20px; }
+  .btn-primary            { padding: 9px 12px; font-size: 13px; }
+  .auth-card              { padding: 24px 16px; }
+  .auth-card h2           { font-size: 18px; }
+  .otp-box                { width: 38px; height: 46px; font-size: 18px; }
+  .calendar-cell          { min-height: 46px; }
+  .cal-task               { display: none; }
+  .schedule-task          { flex-direction: column; gap: 6px; }
+  .suggestion-header      { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .missed-days-input      { flex-wrap: wrap; }
+  .tab-btn span           { display: none; }
+  .tab-btn                { padding: 8px; }
+}
+
+
 
 
 /* ===== VALIDATION STYLES ===== */
